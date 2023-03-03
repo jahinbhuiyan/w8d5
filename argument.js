@@ -68,4 +68,20 @@ class Cat {
 
 
 
+  function curriedSumm(numArgs){
+
+    let sum = 0;
+    let numbers = [];
+    return function _curriedSumm(num){
+        numbers.push(num);
+    if (numbers.length === numArgs){
+        numbers.forEach(ele => {
+            sum+= ele;
+            return sum;
+        })
+    }
+    else
+    }
+  }
+
 
