@@ -90,3 +90,32 @@ function curriedSum(numArgs){
 const sum = curriedSum(4);
 sum(5)(30)(20)(1); // => 56
 
+/* 
+function curriedSum(numArgs) {
+  let total = 0;
+  let numbers = [];
+
+  function _curriedSum(num) {
+    numbers.push(num);
+
+    if (numbers.length === numArgs) {
+      numbers.forEach(ele => {
+        total += ele;
+      });
+      return total;
+    } else {
+      return _curriedSum;
+    }
+  }
+
+  if (numArgs === 0) {
+    return 0;
+  } else {
+    return _curriedSum;
+  }
+}
+
+const sum = curriedSum(4);
+console.log(sum(5)(30)(20)(1)); // => 56
+
+*/
