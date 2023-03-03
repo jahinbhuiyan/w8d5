@@ -68,20 +68,25 @@ class Cat {
 
 
 
-  function curriedSumm(numArgs){
-
-    let sum = 0;
+function curriedSum(numArgs){
+    let total = 0;
     let numbers = [];
-    return function _curriedSumm(num){
-        numbers.push(num);
-    if (numbers.length === numArgs){
-        numbers.forEach(ele => {
-            sum+= ele;
-            return sum;
-        })
-    }
-    else
-    }
-  }
 
+    return function _curriedSum(num){
+		for (let i = 0; i < numArgs; i++) {
+        	numbers.push(num);
+    		if (numbers.length === numArgs){
+        		numbers.forEach(ele => {
+           			total += ele;
+        	}) 
+			return total;
+			} else {
+			return curriedSum()
+		}}
+    }
+	
+}
+
+const sum = curriedSum(4);
+sum(5)(30)(20)(1); // => 56
 
